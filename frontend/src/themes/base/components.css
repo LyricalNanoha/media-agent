@@ -1,0 +1,218 @@
+/**
+ * 主题系统 - 基础组件样式
+ * 
+ * 使用 CSS 变量，确保所有主题都能正确覆盖
+ */
+
+/* ============ 玻璃态效果 ============ */
+
+.glass {
+  background: var(--color-surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ============ 卡片 ============ */
+
+.card-anime {
+  background: var(--color-surface);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--animation-duration) var(--animation-easing);
+}
+
+.card-anime:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-hover);
+}
+
+/* ============ 按钮 ============ */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-full);
+  padding: 0.625rem 1.5rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============ 状态指示器 ============ */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-connected {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  box-shadow: 0 0 8px var(--color-primary-100);
+}
+
+.status-disconnected {
+  background: linear-gradient(135deg, var(--color-text-muted), var(--color-secondary));
+  box-shadow: 0 0 8px var(--color-secondary-light);
+}
+
+/* ============ 渐变文字 ============ */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============ 渐变边框 ============ */
+
+.gradient-border {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, var(--color-primary), var(--color-secondary)) border-box;
+  border: 2px solid transparent;
+}
+
+/* ============ 滚动条 ============ */
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* ============ CopilotKit 样式覆盖 ============ */
+
+/* 聊天容器 - 使用主题背景 */
+.copilotKitChat {
+  background: var(--color-surface) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* 消息区域背景 */
+.copilotKitMessages {
+  background: transparent !important;
+}
+
+/* AI 消息样式 - 透明背景，融入聊天区域 */
+.copilotKitAssistantMessage {
+  background: transparent !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* AI 消息内的文字 */
+.copilotKitAssistantMessage p,
+.copilotKitAssistantMessage span,
+.copilotKitAssistantMessage li,
+.copilotKitAssistantMessage h1,
+.copilotKitAssistantMessage h2,
+.copilotKitAssistantMessage h3,
+.copilotKitAssistantMessage h4,
+.copilotKitAssistantMessage h5,
+.copilotKitAssistantMessage h6 {
+  color: var(--color-text-primary) !important;
+}
+
+/* AI 消息内的链接 */
+.copilotKitAssistantMessage a {
+  color: var(--color-primary) !important;
+}
+
+/* 用户消息气泡背景 - 使用主题主色 */
+.copilotKitUserMessage {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+  border-radius: var(--radius-lg) !important;
+  color: white !important;
+}
+
+/* 输入框外层容器 - 透明背景 */
+.copilotKitInputContainer {
+  background: transparent !important;
+}
+
+/* 输入框容器 - 使用主题背景 */
+.copilotKitInput {
+  background: var(--color-surface) !important;
+  border: 2px solid var(--color-border) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.copilotKitInput:focus-within {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px var(--color-primary-100) !important;
+}
+
+/* 输入框内的所有元素 - 透明背景 */
+.copilotKitInput *,
+.copilotKitInputContainer *:not(.copilotKitInput) {
+  background: transparent !important;
+}
+
+/* 输入框内的文本框 */
+.copilotKitInput textarea,
+.copilotKitInput input {
+  background: transparent !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* 输入框占位符文字 */
+.copilotKitInput textarea::placeholder,
+.copilotKitInput input::placeholder {
+  color: var(--color-text-muted) !important;
+}
+
+/* 隐藏 Powered by CopilotKit 标识 */
+.poweredBy,
+.poweredByContainer > div:last-child {
+  display: none !important;
+}
+
+/* 发送按钮 */
+.copilotKitInputControlButton {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+  color: white !important;
+  border-radius: var(--radius-full) !important;
+}
+
+.copilotKitInputControlButton:hover {
+  opacity: 0.9 !important;
+}
+
+/* 消息控制按钮 */
+.copilotKitMessageControlButton {
+  color: var(--color-text-muted) !important;
+}
+
+.copilotKitMessageControlButton:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Markdown 代码块 */
+.copilotKitAssistantMessage pre,
+.copilotKitAssistantMessage code {
+  background: var(--color-background) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+}

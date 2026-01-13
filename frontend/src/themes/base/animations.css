@@ -1,0 +1,179 @@
+/**
+ * 主题系统 - 动画定义
+ * 
+ * 可以通过 --enable-animations: 0 禁用
+ */
+
+/* ============ 关键帧 ============ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes float-delay {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes soft-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8) rotate(180deg);
+  }
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============ 动画类 ============ */
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float-delay 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.animate-heart-beat {
+  animation: heart-beat 1s ease-in-out infinite;
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 1s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* ============ 禁用动画（通过主题控制） ============ */
+
+[data-animations="false"] .animate-float,
+[data-animations="false"] .animate-float-delay,
+[data-animations="false"] .animate-twinkle,
+[data-animations="false"] .animate-soft-pulse,
+[data-animations="false"] .animate-sparkle,
+[data-animations="false"] .animate-heart-beat,
+[data-animations="false"] .animate-bounce-soft,
+[data-animations="false"] .animate-gradient {
+  animation: none !important;
+}
+
+/* ============ 减少动画（用户偏好） ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delay,
+  .animate-twinkle,
+  .animate-soft-pulse,
+  .animate-sparkle,
+  .animate-heart-beat,
+  .animate-bounce-soft,
+  .animate-gradient {
+    animation: none !important;
+  }
+}

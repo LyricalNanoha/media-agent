@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="hairGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C4956A"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+    <linearGradient id="skinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE4D6"/>
+      <stop offset="100%" style="stop-color:#FFDAC8"/>
+    </linearGradient>
+    <linearGradient id="dressGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#E8F4FF"/>
+    </linearGradient>
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B7CF7"/>
+      <stop offset="50%" style="stop-color:#6B5BCD"/>
+      <stop offset="100%" style="stop-color:#5B4BC0"/>
+    </linearGradient>
+    <radialGradient id="blushGradient">
+      <stop offset="0%" style="stop-color:#FFB8B8;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#FFB8B8;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="ribbonGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4D4D"/>
+      <stop offset="100%" style="stop-color:#E63946"/>
+    </linearGradient>
+    <linearGradient id="staffGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE066"/>
+      <stop offset="100%" style="stop-color:#FFD700"/>
+    </linearGradient>
+    <!-- 发光滤镜 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景魔法光环 -->
+  <circle cx="60" cy="65" r="55" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="0 60 65" to="360 60 65" dur="20s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- 左侧马尾 -->
+  <g transform="translate(15, 25)">
+    <!-- 发带 -->
+    <ellipse cx="8" cy="5" rx="6" ry="3" fill="url(#ribbonGradient)"/>
+    <!-- 马尾 -->
+    <path d="M 3 8 Q 0 25, 5 45 Q 10 50, 12 45 Q 15 25, 12 8 Z" fill="url(#hairGradient)"/>
+  </g>
+  
+  <!-- 右侧马尾 -->
+  <g transform="translate(90, 25)">
+    <!-- 发带 -->
+    <ellipse cx="8" cy="5" rx="6" ry="3" fill="url(#ribbonGradient)"/>
+    <!-- 马尾 -->
+    <path d="M 3 8 Q 0 25, 5 45 Q 10 50, 12 45 Q 15 25, 12 8 Z" fill="url(#hairGradient)"/>
+  </g>
+  
+  <!-- 头部 -->
+  <ellipse cx="60" cy="50" rx="32" ry="30" fill="url(#skinGradient)" stroke="#FFD0B8" stroke-width="1"/>
+  
+  <!-- 头发刘海 -->
+  <path d="M 30 35 Q 35 15, 60 18 Q 85 15, 90 35 Q 85 30, 75 32 Q 60 25, 45 32 Q 35 30, 30 35 Z" fill="url(#hairGradient)"/>
+  <!-- 刘海细节 -->
+  <path d="M 40 30 Q 42 22, 48 28" fill="url(#hairGradient)"/>
+  <path d="M 55 28 Q 60 20, 65 28" fill="url(#hairGradient)"/>
+  <path d="M 72 30 Q 78 22, 80 30" fill="url(#hairGradient)"/>
+  
+  <!-- 腮红 -->
+  <ellipse cx="38" cy="55" rx="8" ry="4" fill="url(#blushGradient)"/>
+  <ellipse cx="82" cy="55" rx="8" ry="4" fill="url(#blushGradient)"/>
+  
+  <!-- 左眼 -->
+  <g transform="translate(42, 42)">
+    <!-- 眼白 -->
+    <ellipse cx="8" cy="8" rx="9" ry="10" fill="white"/>
+    <!-- 眼球 -->
+    <ellipse cx="8" cy="9" rx="7" ry="8" fill="url(#eyeGradient)"/>
+    <!-- 瞳孔 -->
+    <ellipse cx="8" cy="10" rx="3" ry="4" fill="#3D3270"/>
+    <!-- 高光 -->
+    <ellipse cx="5" cy="6" rx="2" ry="2.5" fill="white" opacity="0.9"/>
+    <ellipse cx="10" cy="12" rx="1" ry="1.5" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- 右眼 -->
+  <g transform="translate(62, 42)">
+    <!-- 眼白 -->
+    <ellipse cx="8" cy="8" rx="9" ry="10" fill="white"/>
+    <!-- 眼球 -->
+    <ellipse cx="8" cy="9" rx="7" ry="8" fill="url(#eyeGradient)"/>
+    <!-- 瞳孔 -->
+    <ellipse cx="8" cy="10" rx="3" ry="4" fill="#3D3270"/>
+    <!-- 高光 -->
+    <ellipse cx="5" cy="6" rx="2" ry="2.5" fill="white" opacity="0.9"/>
+    <ellipse cx="10" cy="12" rx="1" ry="1.5" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- 嘴巴 -->
+  <path d="M 55 65 Q 60 70, 65 65" fill="none" stroke="#E8A0A0" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 身体/衣服 -->
+  <path d="M 35 75 Q 30 85, 32 105 Q 40 115, 60 115 Q 80 115, 88 105 Q 90 85, 85 75 Z" fill="url(#dressGradient)" stroke="#B8D4FF" stroke-width="1.5"/>
+  
+  <!-- 领口装饰 -->
+  <path d="M 45 78 L 60 85 L 75 78" fill="none" stroke="#B8D4FF" stroke-width="2"/>
+  
+  <!-- 蝴蝶结 -->
+  <g transform="translate(60, 78)">
+    <!-- 左边 -->
+    <ellipse cx="-10" cy="0" rx="8" ry="4" fill="url(#ribbonGradient)" transform="rotate(-15)"/>
+    <!-- 右边 -->
+    <ellipse cx="10" cy="0" rx="8" ry="4" fill="url(#ribbonGradient)" transform="rotate(15)"/>
+    <!-- 中心 -->
+    <circle cx="0" cy="0" r="4" fill="#E63946"/>
+    <!-- 飘带 -->
+    <path d="M -2 4 Q -3 12, 0 18" fill="none" stroke="#C1121F" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 2 4 Q 3 12, 0 18" fill="none" stroke="#C1121F" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 衣服蓝色装饰线 -->
+  <path d="M 40 100 Q 60 105, 80 100" fill="none" stroke="#5BA3FF" stroke-width="2"/>
+  <path d="M 42 108 Q 60 112, 78 108" fill="none" stroke="#5BA3FF" stroke-width="1.5"/>
+  
+  <!-- 魔法杖 Raising Heart -->
+  <g transform="translate(88, 60) rotate(25)" filter="url(#glow)">
+    <!-- 杖身 -->
+    <rect x="-2" y="0" width="4" height="35" rx="2" fill="url(#staffGradient)"/>
+    <!-- 星星顶部 -->
+    <polygon points="0,-12 3,-4 12,-4 5,2 8,10 0,5 -8,10 -5,2 -12,-4 -3,-4" fill="#FFD700" stroke="#FFA500" stroke-width="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- 红宝石核心 -->
+    <circle cx="0" cy="-4" r="4" fill="#FF4D4D">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- 闪烁星星装饰 -->
+  <g fill="#FFD700" filter="url(#glow)">
+    <polygon points="15,15 17,20 22,20 18,24 20,29 15,26 10,29 12,24 8,20 13,20" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="105,20 106,23 109,23 107,25 108,28 105,26 102,28 103,25 101,23 104,23" opacity="0.6" transform="scale(0.8)">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+    </polygon>
+  </g>
+</svg>
+

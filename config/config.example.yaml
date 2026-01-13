@@ -1,0 +1,125 @@
+# ========================================
+# WebDAV Media Rename Agent 配置文件
+# 
+# 使用说明：
+# 1. 复制此文件为 config.yaml
+# 2. 填写您的实际配置
+# ========================================
+
+# TMDB配置
+# 获取API Key: https://www.themoviedb.org/settings/api
+tmdb:
+  api_key: "your_tmdb_api_key_here"
+  language: "zh-CN"                    # 默认查询语言: zh-CN / en-US
+  include_adult: false                 # 是否包含成人内容
+
+# LLM配置 - 支持所有OpenAI API兼容格式
+llm:
+  # 可选提供商标识（仅用于日志）: openai / azure / ollama / siliconflow / deepseek / moonshot / custom
+  provider: "openai"
+  
+  # API配置
+  base_url: "https://api.openai.com/v1"
+  api_key: "your_api_key_here"
+  model: "gpt-4o-mini"
+  
+  # 模型参数
+  temperature: 0.7
+  max_tokens: 4096
+  
+  # ============ 其他提供商配置示例 ============
+  
+  # ---- 硅基流动 SiliconFlow ----
+  # provider: "siliconflow"
+  # base_url: "https://api.siliconflow.cn/v1"
+  # api_key: "your_siliconflow_key"
+  # model: "Qwen/Qwen2.5-72B-Instruct"
+  
+  # ---- DeepSeek ----
+  # provider: "deepseek"
+  # base_url: "https://api.deepseek.com/v1"
+  # api_key: "your_deepseek_key"
+  # model: "deepseek-chat"
+  
+  # ---- 月之暗面 Moonshot ----
+  # provider: "moonshot"
+  # base_url: "https://api.moonshot.cn/v1"
+  # api_key: "your_moonshot_key"
+  # model: "moonshot-v1-8k"
+  
+  # ---- Ollama 本地部署 ----
+  # provider: "ollama"
+  # base_url: "http://localhost:11434/v1"
+  # api_key: "ollama"                   # Ollama不需要key，随便填
+  # model: "qwen2.5:7b"
+  
+  # ---- Azure OpenAI ----
+  # provider: "azure"
+  # base_url: "https://your-resource.openai.azure.com/"
+  # api_key: "your_azure_key"
+  # model: "your-deployment-name"
+  # api_version: "2024-02-01"           # Azure特有配置
+
+# 数据库配置
+database:
+  path: "./data/webdav_tools.db"       # SQLite数据库路径
+
+# 存储服务配置（Alist/WebDAV）
+storage:
+  # 请求限速配置（避免115等网盘风控）
+  # 115网盘建议: request_delay >= 0.5, rate_limit_delay >= 5.0
+  request_delay: 0.5                   # 每次请求间隔（秒），建议0.3-1.0
+  rate_limit_delay: 5.0                # 遇到限流时等待时间（秒）
+  
+  # 目录缓存配置（减少重复请求）
+  cache_enabled: true                  # 是否启用缓存
+  cache_ttl: 300                       # 缓存有效期（秒）
+  cache_size: 100                      # 最大缓存条目数
+  
+  # 连接配置
+  timeout: 30                          # 请求超时（秒）
+  max_retries: 3                       # 最大重试次数
+
+# 扫描配置
+scan:
+  # 支持的视频文件扩展名
+  video_extensions:
+    - ".mkv"
+    - ".mp4"
+    - ".avi"
+    - ".mov"
+    - ".wmv"
+    - ".flv"
+    - ".m4v"
+    - ".ts"
+    - ".rmvb"
+    - ".webm"
+    - ".iso"
+  
+  # 排除的目录/文件模式
+  exclude_patterns:
+    - ".*"                             # 隐藏文件/目录
+    - "@eaDir"                         # 群晖缩略图
+    - "#recycle"                       # 回收站
+    - ".@__thumb"                      # 缩略图缓存
+    - "lost+found"                     # Linux系统目录
+    - "System Volume Information"      # Windows系统目录
+    - "$RECYCLE.BIN"                   # Windows回收站
+    - "Thumbs.db"
+    - ".DS_Store"
+  
+  # 分批处理配置
+  batch_size: 100                      # 每批处理文件数
+  max_depth: ~                         # 最大扫描深度 (null/~ = 无限制)
+
+# 服务端口配置
+server:
+  backend_host: "0.0.0.0"
+  backend_port: 8002
+  frontend_port: 3000
+
+# 日志配置
+logging:
+  level: "INFO"                        # DEBUG / INFO / WARNING / ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+

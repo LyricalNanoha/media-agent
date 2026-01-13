@@ -1,0 +1,29 @@
+# 🎀 奈叶的媒体整理助手 - Docker Compose 配置
+# 
+# 使用方法:
+# 1. 复制 .env.example 为 .env 并填写配置
+# 2. 运行: docker-compose up -d
+# 3. 访问: http://localhost:3000
+
+version: '3.8'
+
+services:
+  nanoha-media-agent:
+    build: .
+    image: nanoha-media-agent:latest
+    container_name: nanoha-media-agent
+    ports:
+      - "3000:3000"
+    environment:
+      - LLM_API_KEY=${LLM_API_KEY}
+      - LLM_BASE_URL=${LLM_BASE_URL:-}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o}
+      - TMDB_API_KEY=${TMDB_API_KEY}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+

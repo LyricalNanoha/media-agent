@@ -1,0 +1,60 @@
+/**
+ * 🌸 Nanoha 主题 - 样式覆盖
+ * 
+ * 这里定义 Nanoha 主题特有的样式
+ */
+
+[data-theme="nanoha"] {
+  /* 主色调 */
+  --color-primary: #FF6B9D;
+  --color-primary-light: #FFB3C6;
+  --color-primary-dark: #FF4D6D;
+  --color-primary-50: rgba(255, 107, 157, 0.1);
+  --color-primary-100: rgba(255, 107, 157, 0.2);
+  --color-primary-200: rgba(255, 107, 157, 0.3);
+  
+  /* 次要色 */
+  --color-secondary: #5BA3FF;
+  --color-secondary-light: #B8D4FF;
+  --color-secondary-dark: #3B82F6;
+  
+  /* 强调色 */
+  --color-accent: #FFD700;
+  --color-accent-light: #FEF3C7;
+  --color-accent-dark: #F59E0B;
+  
+  /* 背景 */
+  --color-background: #FFFFFF;
+  --color-background-gradient: linear-gradient(135deg, #FFFFFF 0%, #F0F7FF 30%, #E8F4FF 70%, #F0EDFF 100%);
+  --color-surface: rgba(255, 255, 255, 0.9);
+  
+  /* 文字 */
+  --color-text-primary: #2D3748;
+  --color-text-secondary: #4A5568;
+  --color-text-muted: #A0AEC0;
+  
+  /* 边框 */
+  --color-border: rgba(255, 107, 157, 0.2);
+  --color-border-hover: rgba(255, 107, 157, 0.4);
+  
+  /* 阴影 */
+  --shadow-md: 0 4px 16px rgba(255, 107, 157, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 32px rgba(255, 107, 157, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 20px rgba(255, 107, 157, 0.3);
+  
+  /* 圆角 */
+  --radius-lg: 1.5rem;
+  
+  /* 字体 */
+  --font-primary: "M PLUS Rounded 1c", "Noto Sans SC", -apple-system, sans-serif;
+}
+
+/* Nanoha 主题特有的装饰效果 */
+[data-theme="nanoha"] .card-anime {
+  border-radius: 1.5rem;
+}
+
+[data-theme="nanoha"] .status-disconnected {
+  background: linear-gradient(135deg, #FFB3C6, #FF6B9D);
+  box-shadow: 0 0 8px rgba(255, 107, 157, 0.5);
+}

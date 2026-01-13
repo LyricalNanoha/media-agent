@@ -1,0 +1,215 @@
+/**
+ * 🌆 赛博朋克主题 - 样式覆盖
+ * 使用更协调的霓虹色系
+ */
+
+[data-theme="cyberpunk"] {
+  /* 主色调 - 霓虹青 */
+  --color-primary: #00E6FF;
+  --color-primary-light: #66FFFF;
+  --color-primary-dark: #00B8CC;
+  --color-primary-50: rgba(0, 230, 255, 0.05);
+  --color-primary-100: rgba(0, 230, 255, 0.1);
+  --color-primary-200: rgba(0, 230, 255, 0.2);
+  
+  /* 次要色 - 霓虹紫红 */
+  --color-secondary: #FF33CC;
+  --color-secondary-light: #FF99FF;
+  --color-secondary-dark: #CC0099;
+  
+  /* 强调色 - 霓虹黄绿 */
+  --color-accent: #CCFF00;
+  --color-accent-light: #E6FF66;
+  --color-accent-dark: #99CC00;
+  
+  /* 状态色 - 使用主题青色系 */
+  --color-success: #00E6FF;
+  --color-success-light: rgba(0, 230, 255, 0.2);
+  --color-error: #FF0040;
+  --color-error-light: rgba(255, 0, 64, 0.2);
+  --color-warning: #FFB800;
+  --color-warning-light: rgba(255, 184, 0, 0.2);
+  
+  /* 背景 - 深紫色调 */
+  --color-background: #0D0D1A;
+  --color-background-gradient: linear-gradient(135deg, #0D0D1A 0%, #1A0D2A 50%, #0A0A1A 100%);
+  --color-surface: rgba(13, 13, 26, 0.9);
+  --color-surface-hover: rgba(26, 13, 42, 0.9);
+  
+  /* 文字 - 亮色 */
+  --color-text-primary: #E0E0E0;
+  --color-text-secondary: #A0A0A0;
+  --color-text-muted: #505050;
+  --color-text-inverse: #0D0D1A;
+  
+  /* 边框 - 主色调光晕 */
+  --color-border: rgba(0, 230, 255, 0.4);
+  --color-border-hover: rgba(0, 230, 255, 0.6);
+  --color-divider: rgba(0, 230, 255, 0.15);
+  
+  /* 阴影 - 柔和的霓虹光晕 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 230, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 230, 255, 0.12), 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 15px rgba(0, 230, 255, 0.3), 0 0 30px rgba(0, 230, 255, 0.15);
+  
+  /* 圆角 - 锐利风格 */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+  
+  /* 字体 - 科技感 */
+  --font-primary: "Orbitron", "Noto Sans SC", -apple-system, sans-serif;
+}
+
+/* 赛博朋克主题的玻璃效果 */
+[data-theme="cyberpunk"] .glass {
+  background: rgba(13, 13, 26, 0.85);
+  border-color: rgba(0, 230, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* 赛博朋克主题的卡片 */
+[data-theme="cyberpunk"] .card-anime {
+  background: rgba(13, 13, 26, 0.9);
+  border: 1px solid rgba(0, 230, 255, 0.3);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.08);
+}
+
+[data-theme="cyberpunk"] .card-anime:hover {
+  border-color: rgba(0, 230, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 230, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* 赛博朋克主题的状态指示器 - 使用主题青色 */
+[data-theme="cyberpunk"] .status-connected {
+  background: linear-gradient(135deg, #66FFFF, #00E6FF) !important;
+  box-shadow: 0 0 8px rgba(0, 230, 255, 0.5) !important;
+}
+
+[data-theme="cyberpunk"] .status-disconnected {
+  background: linear-gradient(135deg, #33C9D6, #00B8CC) !important;
+  box-shadow: 0 0 8px rgba(0, 184, 204, 0.4) !important;
+}
+
+/* 赛博朋克主题的渐变文字 - 使用主色和次色 */
+[data-theme="cyberpunk"] .text-gradient {
+  background: linear-gradient(135deg, #00E6FF, #FF33CC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 赛博朋克主题的按钮 */
+[data-theme="cyberpunk"] .btn-primary {
+  background: linear-gradient(135deg, #00E6FF 0%, #00B8CC 100%);
+  border-radius: 0.375rem;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.3);
+  color: #0D0D1A;
+  font-weight: 600;
+}
+
+[data-theme="cyberpunk"] .btn-primary:hover {
+  box-shadow: 0 0 18px rgba(0, 230, 255, 0.5);
+}
+
+/* 赛博朋克主题的滚动条 */
+[data-theme="cyberpunk"]::-webkit-scrollbar-track {
+  background: rgba(13, 13, 26, 0.5);
+}
+
+[data-theme="cyberpunk"]::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00E6FF, #FF33CC);
+}
+
+[data-theme="cyberpunk"]::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #66FFFF, #FF99FF);
+}
+
+/* 赛博朋克主题的霓虹边框效果 - 更柔和 */
+[data-theme="cyberpunk"] .neon-border {
+  border: 1px solid #00E6FF;
+  box-shadow: 
+    0 0 4px rgba(0, 230, 255, 0.5),
+    0 0 8px rgba(0, 230, 255, 0.3),
+    inset 0 0 4px rgba(0, 230, 255, 0.1);
+}
+
+/* CopilotKit 聊天容器 - 深色背景 */
+[data-theme="cyberpunk"] .copilotKitChat {
+  background: rgba(13, 13, 26, 0.95) !important;
+}
+
+/* 输入框外层容器 - 透明 */
+[data-theme="cyberpunk"] .copilotKitInputContainer {
+  background: transparent !important;
+}
+
+[data-theme="cyberpunk"] .copilotKitInputContainer *:not(.copilotKitInput) {
+  background: transparent !important;
+}
+
+/* CopilotKit AI 消息 - 透明背景，文字亮色 */
+[data-theme="cyberpunk"] .copilotKitAssistantMessage {
+  background: transparent !important;
+  color: #E0E0E0 !important;
+}
+
+[data-theme="cyberpunk"] .copilotKitAssistantMessage p,
+[data-theme="cyberpunk"] .copilotKitAssistantMessage span,
+[data-theme="cyberpunk"] .copilotKitAssistantMessage li,
+[data-theme="cyberpunk"] .copilotKitAssistantMessage h1,
+[data-theme="cyberpunk"] .copilotKitAssistantMessage h2,
+[data-theme="cyberpunk"] .copilotKitAssistantMessage h3 {
+  color: #E0E0E0 !important;
+}
+
+/* CopilotKit 用户消息样式 */
+[data-theme="cyberpunk"] .copilotKitUserMessage {
+  background: linear-gradient(135deg, #00E6FF 0%, #00B8CC 100%) !important;
+  color: #0D0D1A !important;
+}
+
+/* CopilotKit 输入框样式 - 深色背景 */
+[data-theme="cyberpunk"] .copilotKitInput {
+  border: 2px solid rgba(0, 230, 255, 0.4) !important;
+  background: rgba(13, 13, 26, 0.95) !important;
+}
+
+/* 输入框内所有元素透明 */
+[data-theme="cyberpunk"] .copilotKitInput * {
+  background: transparent !important;
+}
+
+[data-theme="cyberpunk"] .copilotKitInput textarea,
+[data-theme="cyberpunk"] .copilotKitInput input {
+  color: #E0E0E0 !important;
+  background: transparent !important;
+}
+
+[data-theme="cyberpunk"] .copilotKitInput textarea::placeholder,
+[data-theme="cyberpunk"] .copilotKitInput input::placeholder {
+  color: #505050 !important;
+}
+
+[data-theme="cyberpunk"] .copilotKitInput:focus-within {
+  border-color: #00E6FF !important;
+  box-shadow: 0 0 0 3px rgba(0, 230, 255, 0.2) !important;
+}
+
+/* CopilotKit 发送按钮 */
+[data-theme="cyberpunk"] .copilotKitInputControlButton {
+  background: linear-gradient(135deg, #00E6FF 0%, #00B8CC 100%) !important;
+  color: #0D0D1A !important;
+}
+
+/* 代码块样式 - 深色 */
+[data-theme="cyberpunk"] .copilotKitAssistantMessage pre,
+[data-theme="cyberpunk"] .copilotKitAssistantMessage code {
+  background: rgba(10, 10, 26, 0.95) !important;
+  color: #00E6FF !important;
+  border: 1px solid rgba(0, 230, 255, 0.2) !important;
+}

@@ -1,0 +1,43 @@
+# ========================================
+# WebDAV Media Rename Agent - Python依赖
+# ========================================
+
+# Web框架
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# CopilotKit集成
+copilotkit>=0.1.0
+
+# LangChain / LangGraph
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langgraph>=0.0.20
+
+# WebDAV客户端
+webdavclient3>=3.14.6
+
+# TMDB API
+tmdbv3api>=1.9.0
+
+# 数据库
+sqlalchemy>=2.0.0
+aiosqlite>=0.19.0
+greenlet>=3.0.0
+
+# 配置管理
+pyyaml>=6.0.1
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# 工具库
+httpx>=0.26.0
+python-multipart>=0.0.6
+aiofiles>=23.2.1
+
+# 加密（密码存储）
+cryptography>=41.0.0
+
+# 开发工具
+python-dotenv>=1.0.0
+

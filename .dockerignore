@@ -1,0 +1,71 @@
+# ===========================================
+# Docker 镜像优化 - 排除不需要的文件
+# ===========================================
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+.cursor
+
+# Documentation
+*.md
+docs/
+
+# Tests
+**/__tests__
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+backend/tests/
+pytest.ini
+
+# Development files
+.env.local
+.env.development
+.env.*.local
+
+# Node modules (will be installed in Docker)
+frontend/node_modules
+
+# Python virtual environments
+backend/.venv
+backend/venv
+**/__pycache__
+*.pyc
+*.pyo
+
+# Build outputs (will be generated in Docker)
+frontend/.next
+frontend/out
+frontend/build
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Coverage reports
+coverage/
+.nyc_output/
+htmlcov/
+.coverage
+
+# Cache
+.cache
+.pytest_cache
+.mypy_cache

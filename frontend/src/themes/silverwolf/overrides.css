@@ -1,0 +1,199 @@
+/**
+ * 🐺 银狼主题 - 样式覆盖
+ * 紫色系 + 游戏/黑客风格
+ */
+
+[data-theme="silverwolf"] {
+  /* 主色调 - 紫色 */
+  --color-primary: #9B7BFF;
+  --color-primary-light: #C4B5FF;
+  --color-primary-dark: #7B5BDF;
+  --color-primary-50: rgba(155, 123, 255, 0.05);
+  --color-primary-100: rgba(155, 123, 255, 0.1);
+  --color-primary-200: rgba(155, 123, 255, 0.2);
+  
+  /* 次要色 - 深紫 */
+  --color-secondary: #6B5B95;
+  --color-secondary-light: #9B8BC5;
+  --color-secondary-dark: #4B3B75;
+  
+  /* 强调色 - 青色 */
+  --color-accent: #00D9FF;
+  --color-accent-light: #66E9FF;
+  --color-accent-dark: #00A9CF;
+  
+  /* 状态色 - 使用主题紫色系 */
+  --color-success: #9B7BFF;
+  --color-success-light: rgba(155, 123, 255, 0.2);
+  --color-error: #FF5252;
+  --color-error-light: rgba(255, 82, 82, 0.2);
+  --color-warning: #FFD740;
+  --color-warning-light: rgba(255, 215, 64, 0.2);
+  
+  /* 背景 - 深色 */
+  --color-background: #1A1A2E;
+  --color-background-gradient: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F0F1A 100%);
+  --color-surface: rgba(26, 26, 46, 0.95);
+  --color-surface-hover: rgba(36, 36, 66, 0.95);
+  
+  /* 文字 */
+  --color-text-primary: #E8E8FF;
+  --color-text-secondary: #A0A0C0;
+  --color-text-muted: #606080;
+  --color-text-inverse: #1A1A2E;
+  
+  /* 边框 */
+  --color-border: rgba(155, 123, 255, 0.3);
+  --color-border-hover: rgba(155, 123, 255, 0.5);
+  --color-divider: rgba(155, 123, 255, 0.15);
+  
+  /* 阴影 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(155, 123, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 32px rgba(155, 123, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 15px rgba(155, 123, 255, 0.4), 0 0 30px rgba(155, 123, 255, 0.2);
+  
+  /* 圆角 */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+  
+  /* 字体 - 等宽字体（黑客风格）*/
+  --font-primary: "JetBrains Mono", "Fira Code", "Noto Sans SC", monospace;
+}
+
+/* 银狼主题的卡片 */
+[data-theme="silverwolf"] .card-anime {
+  background: rgba(26, 26, 46, 0.9);
+  border: 1px solid rgba(155, 123, 255, 0.3);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(155, 123, 255, 0.1);
+}
+
+[data-theme="silverwolf"] .card-anime:hover {
+  border-color: rgba(155, 123, 255, 0.5);
+  box-shadow: 0 0 20px rgba(155, 123, 255, 0.2);
+}
+
+/* 银狼主题的状态指示器 - 使用主题紫色 */
+[data-theme="silverwolf"] .status-connected {
+  background: linear-gradient(135deg, #C4B5FF, #9B7BFF) !important;
+  box-shadow: 0 0 8px rgba(155, 123, 255, 0.5) !important;
+}
+
+[data-theme="silverwolf"] .status-disconnected {
+  background: linear-gradient(135deg, #9B8BC5, #6B5B95) !important;
+  box-shadow: 0 0 8px rgba(107, 91, 149, 0.5) !important;
+}
+
+/* 银狼主题的渐变文字 */
+[data-theme="silverwolf"] .text-gradient {
+  background: linear-gradient(135deg, #9B7BFF, #00D9FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 银狼主题的按钮 */
+[data-theme="silverwolf"] .btn-primary {
+  background: linear-gradient(135deg, #9B7BFF 0%, #7B5BDF 100%);
+  border-radius: 0.375rem;
+  box-shadow: 0 0 10px rgba(155, 123, 255, 0.3);
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+}
+
+[data-theme="silverwolf"] .btn-primary:hover {
+  box-shadow: 0 0 18px rgba(155, 123, 255, 0.5);
+}
+
+/* 银狼主题的滚动条 */
+[data-theme="silverwolf"]::-webkit-scrollbar-track {
+  background: rgba(26, 26, 46, 0.5);
+}
+
+[data-theme="silverwolf"]::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #9B7BFF, #6B5B95);
+}
+
+[data-theme="silverwolf"]::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #C4B5FF, #9B8BC5);
+}
+
+/* CopilotKit 聊天容器 - 深色背景 */
+[data-theme="silverwolf"] .copilotKitChat {
+  background: rgba(26, 26, 46, 0.95) !important;
+}
+
+/* 输入框外层容器 - 透明 */
+[data-theme="silverwolf"] .copilotKitInputContainer {
+  background: transparent !important;
+}
+
+[data-theme="silverwolf"] .copilotKitInputContainer *:not(.copilotKitInput) {
+  background: transparent !important;
+}
+
+/* CopilotKit AI 消息 - 透明背景，文字亮色 */
+[data-theme="silverwolf"] .copilotKitAssistantMessage {
+  background: transparent !important;
+  color: #E8E8FF !important;
+}
+
+[data-theme="silverwolf"] .copilotKitAssistantMessage p,
+[data-theme="silverwolf"] .copilotKitAssistantMessage span,
+[data-theme="silverwolf"] .copilotKitAssistantMessage li,
+[data-theme="silverwolf"] .copilotKitAssistantMessage h1,
+[data-theme="silverwolf"] .copilotKitAssistantMessage h2,
+[data-theme="silverwolf"] .copilotKitAssistantMessage h3 {
+  color: #E8E8FF !important;
+}
+
+/* CopilotKit 用户消息样式 */
+[data-theme="silverwolf"] .copilotKitUserMessage {
+  background: linear-gradient(135deg, #9B7BFF 0%, #7B5BDF 100%) !important;
+  color: white !important;
+}
+
+/* CopilotKit 输入框样式 - 深色背景 */
+[data-theme="silverwolf"] .copilotKitInput {
+  border: 2px solid rgba(155, 123, 255, 0.4) !important;
+  background: rgba(26, 26, 46, 0.95) !important;
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+/* 输入框内所有元素透明 */
+[data-theme="silverwolf"] .copilotKitInput * {
+  background: transparent !important;
+}
+
+[data-theme="silverwolf"] .copilotKitInput textarea,
+[data-theme="silverwolf"] .copilotKitInput input {
+  color: #E8E8FF !important;
+  background: transparent !important;
+}
+
+[data-theme="silverwolf"] .copilotKitInput textarea::placeholder,
+[data-theme="silverwolf"] .copilotKitInput input::placeholder {
+  color: #606080 !important;
+}
+
+[data-theme="silverwolf"] .copilotKitInput:focus-within {
+  border-color: #9B7BFF !important;
+  box-shadow: 0 0 0 3px rgba(155, 123, 255, 0.2) !important;
+}
+
+/* CopilotKit 发送按钮 */
+[data-theme="silverwolf"] .copilotKitInputControlButton {
+  background: linear-gradient(135deg, #9B7BFF 0%, #7B5BDF 100%) !important;
+  color: white !important;
+}
+
+/* 代码块样式（黑客风格）*/
+[data-theme="silverwolf"] pre,
+[data-theme="silverwolf"] code {
+  background: rgba(15, 15, 26, 0.9) !important;
+  border: 1px solid rgba(155, 123, 255, 0.2);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
