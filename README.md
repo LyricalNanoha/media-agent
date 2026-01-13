@@ -1,5 +1,10 @@
 # Media Agent
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/lyricalnanoha/media-agent)](https://hub.docker.com/r/lyricalnanoha/media-agent)
+[![Docker Image Size](https://img.shields.io/docker/image-size/lyricalnanoha/media-agent/latest)](https://hub.docker.com/r/lyricalnanoha/media-agent)
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org)
+
 基于 AI Agent 的影视资源管理工具，支持 Alist/WebDAV 扫描、TMDB 匹配和 STRM 生成。
 
 ## ✨ 功能特性
