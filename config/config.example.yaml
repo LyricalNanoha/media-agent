@@ -66,19 +66,13 @@ database:
 
 # 存储服务配置（Alist/WebDAV）
 storage:
-  # 请求限速配置（避免115等网盘风控）
-  # 115网盘建议: request_delay >= 0.5, rate_limit_delay >= 5.0
-  request_delay: 0.5                   # 每次请求间隔（秒），建议0.3-1.0
+  # 限流配置（避免115等网盘风控）
   rate_limit_delay: 5.0                # 遇到限流时等待时间（秒）
   
   # 目录缓存配置（减少重复请求）
   cache_enabled: true                  # 是否启用缓存
   cache_ttl: 300                       # 缓存有效期（秒）
   cache_size: 100                      # 最大缓存条目数
-  
-  # 连接配置
-  timeout: 30                          # 请求超时（秒）
-  max_retries: 3                       # 最大重试次数
 
 # 扫描配置
 scan:
@@ -116,7 +110,6 @@ scan:
 server:
   backend_host: "0.0.0.0"
   backend_port: 8002
-  frontend_port: 3000
 
 # 日志配置
 logging:
