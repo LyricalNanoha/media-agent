@@ -182,10 +182,21 @@ def _build_play_url(base_url: str, file_path: str, storage_type: str) -> str:
     Returns:
         可播放的 URL
     """
-    # 🔥 模拟 JavaScript encodeURI 行为
-    # encodeURI 不编码的字符（除字母数字外）：- _ . ! ~ * ' ( ) ; / ? : @ & = + $ , #
-    # 注意：[] 会被编码为 %5B%5D（这是正确的！播放器需要这样）
-    ENCODE_URI_SAFE = "-_.!~*'();/?:@&=+$,#"
+    # 🔥 URL 安全字符（针对媒体文件路径优化）
+    # 只保留文件名中常见且不会被 URL 解析器误解的字符
+    # 必须编码的危险字符：
+    #   # → 锚点标识符，会截断 URL
+    #   ? → 查询字符串起始符，会截断路径
+    #   & = → URL 参数分隔符
+    #   + → 常被解析为空格
+    #   ; @ : → URL 特殊语义字符
+    #   * → 通配符，可能被服务器误解析
+    # 保留的安全字符：
+    #   / → 路径分隔符（必须）
+    #   . → 文件扩展名（必须）
+    #   - _ ( ) → 文件名常用字符
+    #   ! ~ ' , $ → 偶尔出现，一般安全
+    ENCODE_URI_SAFE = "-_.!~'()/$,"
     encoded_path = quote(file_path, safe=ENCODE_URI_SAFE)
     base = base_url.rstrip('/')
     
